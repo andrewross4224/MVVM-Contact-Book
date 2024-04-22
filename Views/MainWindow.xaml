@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_Contact_Book"
         mc:Ignorable="d"
-        Title="Contact Book" Height="800" Width="1500">
+        Title="Contact Book" Height="800" Width="1300">
     <Grid>
         <Grid>
             <!--Page Title--> 
@@ -15,9 +15,9 @@
             <!--Search bar-->
             <TextBox Height="30" Width="205" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,65,0,0" Padding="5"/>
             <!--Button for adding user-->
-            <Button Content="Add User" Height="30" Width="100" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,25,25,0" Padding="5"  Click="Button_Click"/>
+            <Button Content="Add Contact" Height="30" Width="100" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,25,25,0" Padding="5"  Click="Button_Click"/>
             <!--Grid for holding contacts-->
-            <ListView HorizontalAlignment="Left" Margin="25,110,25,25" Width="600" ItemsSource="{Binding Users}">
+            <ListView HorizontalAlignment="Left" Margin="25,110,12,25" Width="600" ItemsSource="{Binding Users}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}"/>
@@ -26,6 +26,29 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+        </Grid>
+        <!--Form for adding contact-->
+        <Grid HorizontalAlignment="Right" Margin="12,110,25,25" Width="600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--Title for area-->
+            <TextBlock Text="Contact Information" FontSize="25" HorizontalAlignment="Center"/>
+            <!--Name TextBox-->
+            <Label Content="Name" Grid.Row="1" Margin="145,0,0,0"/>
+            <TextBox Grid.Row="1" Height="30" Width="300" Padding="5"></TextBox>
+            <!--Email TextBox-->
+            <Label Content="Email" Grid.Row="2" Margin="145,0,0,0"/>
+            <TextBox Grid.Row="2" Height="30" Width="300" Padding="5"></TextBox>
+            <!--Phone TextBox-->
+            <Label Content="Phone" Grid.Row="3" Margin="145,0,0,0"/>
+            <TextBox Grid.Row="3" Height="30" Width="300" Padding="5"></TextBox>
+            <!--Submit Button-->
+            <Button Grid.Row="4" Content="Add Contact" Height="30" Width="100" Padding="5" VerticalAlignment="Top" Click="Button_Click"/>
         </Grid>
     </Grid>
 </Window>
