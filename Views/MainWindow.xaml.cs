@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using MVVM_Contact_Book.ViewModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,8 @@ namespace MVVM_Contact_Book
         public MainWindow()
         {
             InitializeComponent();
+            MainViewModel mainViewModel = new MainViewModel();
+            this.DataContext = mainViewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
